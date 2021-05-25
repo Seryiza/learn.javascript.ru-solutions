@@ -1,0 +1,24 @@
+{
+  "name": "learn.javascript.ru-solutions",
+  "version": "1.0.0",
+  "description": "My solutions for learn.javascript.ru",
+  "scripts": {
+    "serve": "http-server -c-1 .",
+    "add-solution": "yo learnjsru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seryiza/learn.javascript.ru-solutions.git"
+  },
+  "author": "Sergey Zaborovsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Seryiza/learn.javascript.ru-solutions/issues"
+  },
+  "homepage": "https://github.com/Seryiza/learn.javascript.ru-solutions#readme",
+  "devDependencies": {
+    "generator-learnjsru": "^1.0.0",
+    "http-server": "^0.12.3",
+    "yo": "^4.2.0"
+  }
+}
