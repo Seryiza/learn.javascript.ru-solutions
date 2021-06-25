@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>output-numbers-100ms</title>
+</head>
+<body>
+    <script>
+        const ONE_SECOND = 1000;
+
+        function printNumbers1(from, to) {
+            let i = from;
+            let interval = setInterval(() => {
+                alert(i);
+                i += 1;
+
+                if (i > to) {
+                    clearInterval(interval);
+                }
+            }, ONE_SECOND);
+        }
+
+        function printNumbers2(from, to) {
+            let i = from;
+            const doIteration = () => {
+                alert(i);
+                i += 1;
+
+                if (i <= to) {
+                    setTimeout(doIteration, ONE_SECOND);
+                }
+            };
+
+            doIteration();
+        }
+
+        printNumbers2(1, 10);
+    </script>
+</body>
+</html>

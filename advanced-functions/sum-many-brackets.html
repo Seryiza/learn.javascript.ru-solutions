@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum-many-brackets</title>
+</head>
+<body>
+    <script>
+        function sum(n) {
+            const newSum = (m) => sum(n + m);
+
+            newSum.valueOf = () => n;
+
+            return newSum;
+        }
+
+        alert(`Should be true: ${sum(1)(2) == 3}`);
+        alert(`Should be true: ${sum(1)(2)(3) == 6}`);
+        alert(`Should be true: ${sum(0)(1)(2)(3)(4)(5) == 15}`);
+    </script>
+</body>
+</html>

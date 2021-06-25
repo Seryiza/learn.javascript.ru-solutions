@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throttle</title>
+</head>
+<body>
+    <script>
+        function throttle(originalFn, milliseconds) {
+            let isThrottled = false;
+            let lastArguments = null;
+            return function throttledFn() {
+                if (isThrottled) {
+                    lastArguments = arguments;
+                    return;
+                }
+
+                originalFn.apply(this, arguments);
+
+                isThrottled = true;
+                setTimeout(() => {
+                    isThrottled = false;
+                    if (lastArguments !== null) {
+                        throttledFn.apply(this, lastArguments);
+                        lastArguments = null;
+                    }
+                }, milliseconds);
+            };
+        }
+    </script>
+</body>
+</html>

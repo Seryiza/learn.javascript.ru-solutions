@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spy</title>
+</head>
+<body>
+    <script>
+        function spy(originalFn) {
+            const spyFn = function(...args) {
+                spyFn.calls.push(args);
+                return originalFn.apply(this, args);
+            }
+
+            spyFn.calls = [];
+            return spyFn;
+        }
+    </script>
+</body>
+</html>

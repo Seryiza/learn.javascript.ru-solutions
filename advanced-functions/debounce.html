@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>debounce</title>
+</head>
+<body>
+    <script>
+        function debounce(originalFn, milliseconds) {
+            let canCallFunction = true;
+            return function() {
+                if (!canCallFunction) {
+                    return;
+                }
+
+                canCallFunction = false;
+                setTimeout(() => canCallFunction = true, milliseconds);
+
+                originalFn.apply(this, arguments);
+            };
+        }
+    </script>
+</body>
+</html>
